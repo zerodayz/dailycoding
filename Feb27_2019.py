@@ -4,13 +4,13 @@
 # Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
 # For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
 
-mylist = [10, 15, 3, 7]
-k = 17
+mylist = [10, 15, 11, 5]
+k = 16
 
 # Brute force method where we compare each number with other numbers in mylist
 
 
-def list_sum(l, n):
+def list_sum_two_iter(l, n):
     for i in range(len(l)):
         print("Processing number at position i: ", i)
         print(l[i])
@@ -22,7 +22,8 @@ def list_sum(l, n):
                 return True
 
 
-if list_sum(mylist, k):
+
+if list_sum_two_iter(mylist, k):
     print("Any two numbers of ", mylist, " adds up to ", k)
 else:
     print("No two numbers of the list ", mylist, " adds up to ", k)

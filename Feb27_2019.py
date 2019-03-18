@@ -10,7 +10,7 @@ import random
 # mylist = [10, 15, 11, 5, 20]
 # sortedMylist = [5, 10, 11, 15, 20]
 # k = 30
-n = 1000000
+n = 100000000
 
 
 def generate_input(n):
@@ -28,7 +28,7 @@ def generate_input(n):
 # Slow method
 
 
-def list_sum_two_iter(l, n):
+def double_for_loop(l, n):
     start = time.time()
     for i in range(len(l)):
         # print("Processing number at position i: ", i)
@@ -45,7 +45,7 @@ def list_sum_two_iter(l, n):
 # Fast method (required sorted list) doesn't require two for loops
 
 
-def list_sum_linear(l,n):
+def binary_search(l,n):
     start = time.time()
     high_val_index = len(l)-1
     low_val_index = 0
@@ -68,23 +68,23 @@ print("Generating input list with ", n, "items.")
 randomnumber, randomlist, sortedrandomlist = generate_input(n)
 
 print("==================STEP 2==========================")
-print("Searching for two numbers using linear method that adds up to ", randomnumber, " within ", n, "items.")
+print("Searching for two numbers using binary search method that adds up to ", randomnumber, " within ", n, "items.")
 
-boolean, n1, n2 = list_sum_linear(sortedrandomlist, randomnumber)
+boolean, n1, n2 = binary_search(sortedrandomlist, randomnumber)
 
 if boolean is True:
     # print(sortedrandomlist)
-    print("list_sum_linear: Found ", n1, " and ", n2, " adds up to ", randomnumber)
+    print("binary_search: Found ", n1, " and ", n2, " adds up to ", randomnumber)
 else:
-    print("list_sum_linear: No two numbers found that adds up to ", randomnumber)
+    print("binary_search: No two numbers found that adds up to ", randomnumber)
 
 print("==================STEP 3==========================")
-print("Searching for two numbers using iterating method that adds up to ", randomnumber, " within ", n, "items.")
+print("Searching for two numbers using double for-loop method that adds up to ", randomnumber, " within ", n, "items.")
 
-boolean, n1, n2 = list_sum_two_iter(randomlist, randomnumber)
+boolean, n1, n2 = double_for_loop(randomlist, randomnumber)
 
 if boolean is True:
     # print(randomlist)
-    print("list_sum_two_iter: Found ", n1, " and ", n2, " adds up to ", randomnumber)
+    print("double_for_loop: Found ", n1, " and ", n2, " adds up to ", randomnumber)
 else:
-    print("list_sum_two_iter: No two numbers found that adds up to ", randomnumber)
+    print("double_for_loop: No two numbers found that adds up to ", randomnumber)

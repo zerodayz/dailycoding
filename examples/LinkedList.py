@@ -8,6 +8,17 @@ class LinkedList(object):
     def __init__(self, head=None):
         self.head = head
 
+    def print(self):
+        linked_list = []
+        current = self.head
+        current_position = 1
+        if self.head:
+            while current:
+                linked_list.append(current.value)
+                current = current.next
+                current_position += 1
+        return linked_list
+
     def append(self, new_element):
         current = self.head
         if self.head:
@@ -18,29 +29,47 @@ class LinkedList(object):
             self.head = new_element
 
     def get_position(self, position):
-        """Get an element from a particular position.
-        Assume the first position is "1".
-        Return "None" if position is not in the list."""
-        current_position = 1
+        """Getting object at position N"""
         current = self.head
-        if self.head:
-            while current.next and current_position != position:
-                current = current.next
-                current_position += 1
-            if current_position == position:
-                return current
-        return None
+        current_position = 1
+        if current_position < 1:
+            return None
+        while current and current_position != position:
+            current = current.next
+            current_position += 1
+        if current_position == position:
+            return current
+        else:
+            return None
 
     def insert(self, new_element, position):
-        """Insert a new node at the given position.
-        Assume the first position is "1".
-        Inserting at position 3 means between
-        the 2nd and 3rd elements."""
-        pass
+        """Inserting value at position N"""
+        current_position = 1
+        current = self.head
+        if position > 1:
+            while current and current_position < position:
+                if current_position == position - 1:
+                    new_element.next = current.next
+                    current.next = new_element
+                current = current.next
+                current_position += 1
+        elif position == 1:
+            new_element.next = self.head
+            self.head = new_element
 
     def delete(self, value):
-        """Delete the first node with a given value."""
-        pass
+        """Delete first object with value N"""
+        pre_element = None
+        current = self.head
+        while current.value != value and current.next:
+            pre_element = current
+            current = current.next
+
+        if current.value == value:
+            if pre_element:
+                pre_element.next = current.next
+            else:
+                self.head = current.next
 
 
 # Test cases
@@ -54,6 +83,7 @@ e4 = Element(4)
 ll = LinkedList(e1)
 ll.append(e2)
 ll.append(e3)
+print(ll.print())
 
 # Test get_position
 # Should print 3
@@ -63,11 +93,15 @@ print(ll.get_position(3).value)
 
 # Test insert
 ll.insert(e4, 3)
+print(ll.print())
+
 # Should print 4 now
 print(ll.get_position(3).value)
 
 # Test delete
 ll.delete(1)
+print(ll.print())
+
 # Should print 2 now
 print(ll.get_position(1).value)
 # Should print 4 now

@@ -20,6 +20,7 @@ class LinkedList(object):
         return linked_list
 
     def append(self, new_element):
+        """Appending object at the end of linked list"""
         current = self.head
         if self.head:
             while current.next:

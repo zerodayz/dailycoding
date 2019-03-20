@@ -72,13 +72,46 @@ class LinkedList(object):
             else:
                 self.head = current.next
 
+    def insert_first(self, new_element):
+        """Insert new element as the head of the LinkedList"""
+        new_element.next = self.head
+        self.head = new_element
+
+    def delete_first(self):
+        """Delete the first (head) element in the LinkedList as return it"""
+        deleted = self.head
+        if self.head:
+            self.head = self.head.next
+            deleted.next = None
+        return deleted
+
 
 class Stack(object):
     def __init__(self, top=None):
         self.ll = LinkedList(top)
 
     def push(self, new_element):
-        pass
+        self.ll.insert_first(new_element)
 
     def pop(self):
-        pass
+        return self.ll.delete_first()
+
+# Test cases
+# Set up some Elements
+e1 = Element(1)
+e2 = Element(2)
+e3 = Element(3)
+e4 = Element(4)
+
+# Start setting up a Stack
+stack = Stack(e1)
+
+# Test stack functionality
+stack.push(e2)
+stack.push(e3)
+print(stack.pop().value)
+print(stack.pop().value)
+print(stack.pop().value)
+print(stack.pop())
+stack.push(e4)
+print(stack.pop().value)

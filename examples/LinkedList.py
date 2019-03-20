@@ -72,6 +72,19 @@ class LinkedList(object):
             else:
                 self.head = current.next
 
+    def insert_first(self, new_element):
+        """Insert new element as the head of the LinkedList"""
+        new_element.next = self.head
+        self.head = new_element
+
+    def delete_first(self):
+        """Delete the first (head) element in the LinkedList as return it"""
+        deleted = self.head
+        if self.head:
+            self.head = self.head.next
+            deleted.next = None
+        return deleted
+
 
 # Test cases
 # Set up some Elements
@@ -79,11 +92,21 @@ e1 = Element(1)
 e2 = Element(2)
 e3 = Element(3)
 e4 = Element(4)
+e5 = Element(5)
 
 # Start setting up a LinkedList
 ll = LinkedList(e1)
 ll.append(e2)
 ll.append(e3)
+
+# Test insert_first
+ll.insert_first(e4)
+
+# Print linked list
+print(ll.print())
+
+# Test delete_first
+ll.delete_first()
 print(ll.print())
 
 # Test get_position
@@ -93,14 +116,14 @@ print(ll.head.next.next.value)
 print(ll.get_position(3).value)
 
 # Test insert
-ll.insert(e4, 3)
+ll.insert(e5, 3)
 print(ll.print())
 
 # Should print 4 now
 print(ll.get_position(3).value)
 
 # Test delete
-ll.delete(1)
+ll.delete(5)
 print(ll.print())
 
 # Should print 2 now

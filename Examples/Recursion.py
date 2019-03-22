@@ -9,4 +9,5 @@ def recursive(input):
         print("output = %s from recursive(%s)" %(output, input - 1))
         return output
 
+
 print(recursive(3))

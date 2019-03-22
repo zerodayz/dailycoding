@@ -38,7 +38,5 @@ def binary_search(input_array, value):
     return -1
 
 test_list = [1,2,3,4,5,6,7,8,9]
-test_val1 = 9
-test_val2 = 12
+test_val1 = 5
 print(binary_search(test_list, test_val1))
-print(binary_search(test_list, test_val2))

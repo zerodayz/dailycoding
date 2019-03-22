@@ -4,11 +4,16 @@
 def binary_search(input_array, value):
     print("looking for index of value:", value)
     print("in list:", input_array)
-    print("====")
+
+    step = 1
     original_list = input_array
 
     for j in range(0, round(len(input_array) / 2)):
+
+        print("==== STEP", step, "====")
+
         left, right = [], []
+        step += 1
 
         for i in range(0, len(input_array)):
             if i < len(input_array) / 2:
@@ -21,11 +26,9 @@ def binary_search(input_array, value):
 
         if value > left[-1] and len(right) > 1:
             print("value not found in left, trying right.")
-            print("====")
             input_array = right
         elif value < right[0] and len(left) > 1:
             print("value not found in right, trying left.")
-            print("====")
             input_array = left
 
         if value == right[0] and len(right) == 1:

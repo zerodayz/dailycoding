@@ -54,6 +54,3 @@ print(get_fib(n))
 print(get_fib_list(n))
 print("get_fib_recursive(%s)" % n)
 print(get_fib_recursive(n))
-
-#print(get_fib_recursive(11))
-#print(get_fib_recursive(0))

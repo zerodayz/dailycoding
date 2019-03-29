@@ -2,8 +2,18 @@
 
 
 def quick_sort(l):
-    counter = 0
-    pivot = len(l) - 1
+    quick_sort_helper(l, len(l) - 1, 0)
+
+
+def quick_sort_helper(l, pivot, counter):
+    if counter < pivot:
+        pivot = divide(l, pivot, counter)
+        quick_sort_helper(l, pivot - 1, counter)
+        #quick_sort_helper(l, len(l) - 1, pivot + 2)
+    return l
+
+
+def divide(l, pivot, counter):
 
     while counter != pivot:
         if l[counter] > l[pivot] and pivot - 1 != counter:
@@ -15,7 +25,7 @@ def quick_sort(l):
         elif l[counter] < l[pivot]:
             counter += 1
 
-    return l
+    return pivot
 
 # TODO: This is first part
 

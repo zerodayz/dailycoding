@@ -2,17 +2,8 @@
 
 
 def quick_sort(l):
-    if len(l) < 2:
-        return
-
     counter = 0
     pivot = len(l) - 1
-    pivot = divide(l, counter, pivot)
-
-    return l
-
-
-def divide(l, counter, pivot):
 
     while counter != pivot:
         if l[counter] > l[pivot] and pivot - 1 != counter:
@@ -24,7 +15,7 @@ def divide(l, counter, pivot):
         elif l[counter] < l[pivot]:
             counter += 1
 
-    return pivot
+    return l
 
 # TODO: This is first part
 

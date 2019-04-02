@@ -22,11 +22,14 @@ def divide(l, pivot, counter):
             pivot -= 1
         elif l[counter] > l[pivot] and pivot - 1 == counter:
             l[pivot], l[pivot - 1] = l[pivot - 1], l[pivot]
+            pivot -= 1
+        elif l[counter] == l[pivot]:
+            pivot -= 1
         elif l[counter] < l[pivot]:
             counter += 1
 
     return pivot
 
 
-array = [8, 3, 1, 7, 0, 10, 2]
+array = [21, 4, 1, 3, 9, 20, 25, 6, 21, 14]
 print(quick_sort(array))

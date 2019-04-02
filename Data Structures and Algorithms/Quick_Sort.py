@@ -3,14 +3,14 @@
 
 def quick_sort(l):
     quick_sort_helper(l, len(l) - 1, 0)
+    return l
 
 
 def quick_sort_helper(l, pivot, counter):
     if counter < pivot:
-        pivot = divide(l, pivot, counter)
-        quick_sort_helper(l, pivot - 1, counter)
-        #quick_sort_helper(l, len(l) - 1, pivot + 2)
-    return l
+        p = divide(l, pivot, counter)
+        quick_sort_helper(l, p - 1, counter)
+        quick_sort_helper(l, pivot, p + 1)
 
 
 def divide(l, pivot, counter):
@@ -26,8 +26,6 @@ def divide(l, pivot, counter):
             counter += 1
 
     return pivot
-
-# TODO: This is first part
 
 
 array = [8, 3, 1, 7, 0, 10, 2]

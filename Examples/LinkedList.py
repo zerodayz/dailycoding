@@ -8,7 +8,7 @@ class LinkedList(object):
     def __init__(self, head=None):
         self.head = head
 
-    def print(self):
+    def show(self):
         linked_list = []
         current = self.head
         current_position = 1
@@ -103,11 +103,11 @@ ll.append(e3)
 ll.insert_first(e4)
 
 # Print linked list
-print(ll.print())
+print(ll.show())
 
 # Test delete_first
 ll.delete_first()
-print(ll.print())
+print(ll.show())
 
 # Test get_position
 # Should print 3
@@ -117,14 +117,14 @@ print(ll.get_position(3).value)
 
 # Test insert
 ll.insert(e5, 3)
-print(ll.print())
+print(ll.show())
 
 # Should print 4 now
 print(ll.get_position(3).value)
 
 # Test delete
 ll.delete(5)
-print(ll.print())
+print(ll.show())
 
 # Should print 2 now
 print(ll.get_position(1).value)

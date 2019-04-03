@@ -1,4 +1,4 @@
-
+# Hashing table
 
 class HashTable(object):
     def __init__(self):

@@ -22,26 +22,28 @@ class BinaryTree(object):
         current = self.root
         self.preorder_search(current, find_val)
 
-        return False
-
     def print_tree(self):
-        return ""
+        current = self.root
+        traversal = []
+
+        self.preorder_print(current, traversal)
+        return "-".join(str(t) for t in traversal)
 
     def preorder_search(self, current, find_val):
+        if not current:
+            return ""
 
-        if current.value == find_val:
-            return True
+        self.preorder_search(current.left, find_val)
+        self.preorder_search(current.right, find_val)
 
-        if current.left:
-            current = current.left
-            print("left child exists, checking.")
-        elif current.right:
-            current = current.right
-            print("right child exists, checking.")
+    def preorder_print(self, current, traversal):
+        if not current:
+            return ""
 
-        return False
+        traversal.append(current.value)
+        self.preorder_print(current.left, traversal)
+        self.preorder_print(current.right, traversal)
 
-    def preorder_print(self, start, traversal):
         return traversal
 
 
@@ -66,7 +68,7 @@ tree.root.left.right = Node(5)
 # Should be True
 print tree.search(4)
 # Should be False
-print tree.search(6)
+print tree.search(5)
 
 # Test print_tree
 # Should be 1-2-4-5-3

@@ -13,9 +13,9 @@ class BinarySearchTree(object):
 
     def insert(self, new_val):
         current = self.root
-        self.reinsert(new_val, current)
+        self.insert_helper(new_val, current)
     
-    def reinsert(self, new_val, current):
+    def insert_helper(self, new_val, current):
         if current.left is None and new_val < current.value:
             current.left = Node(new_val)
             return True
@@ -25,10 +25,10 @@ class BinarySearchTree(object):
 
         if new_val > current.value:
             current = current.right
-            self.reinsert(new_val, current)
+            self.insert_helper(new_val, current)
         elif new_val < current.value:
             current = current.left
-            self.reinsert(new_val, current)
+            self.insert_helper(new_val, current)
 
     def search(self, find_val):
         current = self.root

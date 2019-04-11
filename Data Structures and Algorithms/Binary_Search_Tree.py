@@ -14,7 +14,6 @@ class BinarySearchTree(object):
     def insert(self, new_val):
         current = self.root
         self.reinsert(new_val, current)
-
     
     def reinsert(self, new_val, current):
         if current.left is None and new_val < current.value:
@@ -32,8 +31,17 @@ class BinarySearchTree(object):
             self.reinsert(new_val, current)
 
     def search(self, find_val):
+        current = self.root
+        while current:
+            if find_val == current.value:
+                return True
+            elif find_val > current.value:
+                current = current.left
+            elif find_val < current.value:
+                current = current.right
         return False
-    
+
+
 # Set up tree
 tree = BinarySearchTree(4)
 

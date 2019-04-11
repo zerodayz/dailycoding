@@ -1,4 +1,4 @@
-# Binary Tree
+# Binary Tree #1
 
 
 class Node(object):
@@ -20,7 +20,13 @@ class BinaryTree(object):
         DFS - Post-order traversal (Check out parents only after childs are checked out- starting with leafs
         """
         current = self.root
+        self.found = False
+        
         self.preorder_search(current, find_val)
+        
+        if self.found:
+            return True
+        return False
 
     def print_tree(self):
         current = self.root
@@ -30,12 +36,14 @@ class BinaryTree(object):
         return "-".join(str(t) for t in traversal)
 
     def preorder_search(self, current, find_val):
-        if not current:
+        if not current or self.found:
             return ""
-
-        self.preorder_search(current.left, find_val)
-        self.preorder_search(current.right, find_val)
-
+        elif current.value == find_val:
+            self.found = True
+        else:
+            self.preorder_search(current.left, find_val)
+            self.preorder_search(current.right, find_val)
+        
     def preorder_print(self, current, traversal):
         if not current:
             return ""
@@ -66,10 +74,10 @@ tree.root.left.right = Node(5)
 
 # Test search
 # Should be True
-print tree.search(4)
+print(tree.search(4))
 # Should be False
-print tree.search(5)
+print(tree.search(6))
 
 # Test print_tree
 # Should be 1-2-4-5-3
-print tree.print_tree()
+print(tree.print_tree())

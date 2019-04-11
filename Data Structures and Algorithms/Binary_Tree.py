@@ -1,4 +1,4 @@
-# Binary Tree #1
+# Binary Tree #1 First attempt
 
 
 class Node(object):
@@ -72,12 +72,10 @@ tree.root.left.right = Node(5)
 #
 
 
-# Test search
 # Should be True
 print(tree.search(4))
 # Should be False
 print(tree.search(6))
 
-# Test print_tree
 # Should be 1-2-4-5-3
 print(tree.print_tree())

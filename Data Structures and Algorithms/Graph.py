@@ -41,27 +41,12 @@ class Graph(object):
         self.edges.append(new_edge)
 
     def get_edge_list(self):
-        """Don't return a list of edge objects!
-        Return a list of triples that looks like this:
-        (Edge Value, From Node Value, To Node Value)"""
         return []
 
     def get_adjacency_list(self):
-        """Don't return any Node or Edge objects!
-        You'll return a list of lists.
-        The indecies of the outer list represent
-        "from" nodes.
-        Each section in the list will store a list
-        of tuples that looks like this:
-        (To Node, Edge Value)"""
         return []
     
     def get_adjacency_matrix(self):
-        """Return a matrix, or 2D list.
-        Row numbers represent from nodes,
-        column numbers represent to nodes.
-        Store the edge values in each spot,
-        and a 0 if no edge exists."""
         return []
 
 graph = Graph()
@@ -70,8 +55,8 @@ graph.insert_edge(101, 1, 3)
 graph.insert_edge(102, 1, 4)
 graph.insert_edge(103, 3, 4)
 # Should be [(100, 1, 2), (101, 1, 3), (102, 1, 4), (103, 3, 4)]
-print graph.get_edge_list()
+print(graph.get_edge_list())
 # Should be [None, [(2, 100), (3, 101), (4, 102)], None, [(4, 103)], None]
-print graph.get_adjacency_list()
+print(graph.get_adjacency_list())
 # Should be [[0, 0, 0, 0, 0], [0, 0, 100, 101, 102], [0, 0, 0, 0, 0], [0, 0, 0, 0, 103], [0, 0, 0, 0, 0]]
-print graph.get_adjacency_matrix()
+print(graph.get_adjacency_matrix())

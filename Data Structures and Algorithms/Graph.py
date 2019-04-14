@@ -1,4 +1,4 @@
-# Graph
+# Graph first attempt
 
 
 
@@ -42,10 +42,24 @@ class Graph(object):
         self.edges.append(new_edge)
 
     def get_edge_list(self):
-        return []
+        edge_list = []
+        for edge in self.edges:
+            edge_list.append((edge.value, edge.node_from.value, edge.node_to.value))
+        return edge_list
 
     def get_adjacency_list(self):
-        return []
+        adjacency_list = [None]
+        # In Adjacency list vertices have normally id that corresponds to array indexes
+        for node_id in self.nodes:
+            edges_to_list = []
+            for edge in node_id.edges:
+                if edge.node_from.value == node_id.value:
+                    edges_to_list.append((edge.node_to.value, edge.value))
+            if len(edges_to_list) >= 1:
+                adjacency_list.append(edges_to_list)
+            else:
+                adjacency_list.append(None)
+        return adjacency_list
     
     def get_adjacency_matrix(self):
         return []

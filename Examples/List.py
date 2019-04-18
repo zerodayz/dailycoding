@@ -27,3 +27,10 @@ print(a, *a)
 # Slicing list from the end
 b = [1, 2, 3, 4]
 print(b[-3:-1])
+
+# Sorting
+my_list5 = [1, 3, "a", 5]
+try:
+    print(my_list5.sort())
+except TypeError:
+    pass

@@ -34,3 +34,19 @@ try:
     print(my_list5.sort())
 except TypeError:
     pass
+
+try:
+    dictionary = {0,1,2,3,4}
+    x = dictionary[len(dictionary) - 1]
+    y = x % 4
+    print(y)
+except TypeError:
+    pass
+
+dictionary2 = {'r':'e','d':'h','a':'t'}
+print(len(dictionary2))
+
+my_list2 = ['ac','dc']
+for i in my_list2:
+    print(i.upper())
+print(my_list2)

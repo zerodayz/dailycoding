@@ -17,4 +17,11 @@ print(abs(1+2j))
 print(6//4)
 # remainder
 print(6%4)
+print(12%7)
 print("{} {}".format(bool([]), bool(None)))
+print('hi' if True else 'bye')
+
+print(0**0)
+print(0**1)
+print(1**0)
+print(1**1)

@@ -50,3 +50,10 @@ my_list2 = ['ac','dc']
 for i in my_list2:
     print(i.upper())
 print(my_list2)
+
+print("0" or "1")
+print("1" and "2")
+
+a, b, *c = [1, 2, 3, 4]
+print(c)
+print(*c)

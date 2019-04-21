@@ -57,3 +57,16 @@ print("1" and "2")
 a, b, *c = [1, 2, 3, 4]
 print(c)
 print(*c)
+
+x, y = 0, int(True)
+x = x + 1
+y = int(True)
+b = 2
+b_list = [2]
+c = 2
+c_list = [2]
+print(id(b))
+print(id(c))
+print(id(b_list))
+print(id(c_list))
+print(id(x) == id(y))

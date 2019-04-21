@@ -70,3 +70,6 @@ print(id(c))
 print(id(b_list))
 print(id(c_list))
 print(id(x) == id(y))
+
+my_list6 = [1, 2, [3, 4]]
+print(my_list6[2][0])

@@ -73,3 +73,17 @@ print(id(x) == id(y))
 
 my_list6 = [1, 2, [3, 4]]
 print(my_list6[2][0])
+
+a = 12
+b = a
+a = 10
+print(b)
+del(a)
+print(b)
+
+a = [12]
+b = a
+a[0] = 10
+print(b)
+del(a)
+print(b)

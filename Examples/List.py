@@ -81,9 +81,9 @@ print(b)
 del(a)
 print(b)
 
-a = [12]
+a = [12, 11]
 b = a
 a[0] = 10
 print(b)
-del(a)
+del(a[0])
 print(b)

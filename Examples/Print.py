@@ -25,3 +25,10 @@ print(0**0)
 print(0**1)
 print(1**0)
 print(1**1)
+
+a, b, c = 2,7,8
+print(a+b*a)
+print(c)
+print(16//8)
+print(a+(b*a)//c)
+print(14//8)

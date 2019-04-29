@@ -87,3 +87,8 @@ a[0] = 10
 print(b)
 del(a[0])
 print(b)
+
+x = [[0],[1]]
+print(list(map(str,x)))
+print(' '.join(list(map(str,x))))
+print(len(' '.join(list(map(str,x)))))

@@ -32,3 +32,18 @@ print(c)
 print(16//8)
 print(a+(b*a)//c)
 print(14//8)
+
+x = (1+2+3+4%5)
+print(x)
+# results = 2
+print(2%4)
+# results = 1
+print(5%4)
+# results = 0
+print(8%4)
+
+# generator
+t = (n for n in range(5))
+print(t)
+print(type(t))
+print(next(t))

@@ -96,3 +96,7 @@ print(len(' '.join(list(map(str,x)))))
 a = [1,2,3]
 for a[-1] in a:
     print(a[-1])
+
+a = (8,-1,3)
+a.sort()
+print(a[0])

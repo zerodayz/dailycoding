@@ -47,3 +47,16 @@ t = (n for n in range(5))
 print(t)
 print(type(t))
 print(next(t))
+print(bool(0))
+
+b = bytes([0x41, 0x42, 0x43, 0x44])
+s = "Hello world"
+print(b)
+print(s)
+try:
+    print(s+b)
+except Exception:
+    print(s+b.decode('utf-8'))
+
+print(b+s.encode('utf-8'))
+print(s.encode('utf-32'))

@@ -98,5 +98,14 @@ for a[-1] in a:
     print(a[-1])
 
 a = (8,-1,3)
-a.sort()
+try:
+    a.sort()
+except Exception:
+    pass
+
 print(a[0])
+
+a = [1, 2, 3]
+b = a
+b[0] = 2
+print(a)

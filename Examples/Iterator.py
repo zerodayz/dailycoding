@@ -39,3 +39,5 @@ print(list(t4))
 
 t5 = itertools.takewhile(functionA, numbers)
 print(list(t5))
+
+

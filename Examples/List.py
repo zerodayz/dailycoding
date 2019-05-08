@@ -109,3 +109,13 @@ a = [1, 2, 3]
 b = a
 b[0] = 2
 print(a)
+
+def sum(*args):
+    result = 0
+    for arg in args:
+        result += arg
+    return result
+
+print(sum(1, 2, 3, 4, 5))
+print(sum(1, 2, 3))
+print(sum(*a))

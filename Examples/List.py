@@ -105,7 +105,7 @@ except Exception:
 
 print(a[0])
 
-a = [1, 2, 3]
+a = [5, 6, 3]
 b = a
 b[0] = 2
 print(a)
@@ -119,3 +119,11 @@ def sum(*args):
 print(sum(1, 2, 3, 4, 5))
 print(sum(1, 2, 3))
 print(sum(*a))
+
+print(a)
+print(b)
+a = a.sort()
+print(b)
+
+dictionary = {0,3,2,4,3}
+print(len(dictionary))

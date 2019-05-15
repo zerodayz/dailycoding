@@ -30,6 +30,21 @@ class Person():
             self.fname, self.lname, self.age
         )
         return bytes(val.encode('utf-8'))
+    def __getattr__(self, attr):
+        if attr == "name":
+            return "{0} {1}".format(self.fname, self.lname)
+        else:
+            raise AttributeError
+    def __setattr__(self, attr, val):
+        if attr == "name":
+            self.fname = val[0]
+            self.lname = val[1]
+            self.age = val[2]
+        else:
+            super().__setattr__(attr, val)
+    def __dir__(self):
+        return("fname", "lname", "age", "name")
+
 a = A(5)
 print(a.n)
 
@@ -44,3 +59,7 @@ print(repr(person))
 print(str(person))
 print("Format {0}".format(person))
 print(bytes(person))
+print(person.name)
+person.name = ("John", "Doe", 35)
+print(person.name)
+print(dir(person))

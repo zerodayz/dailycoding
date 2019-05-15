@@ -127,3 +127,9 @@ print(b)
 
 dictionary = {0,3,2,4,3}
 print(len(dictionary))
+
+a = [[0] * 2] * 2
+print(a)
+a[0][0] = 1
+print(a)
+print(a[0][0] + a[1][0])

@@ -13,7 +13,7 @@ while next(t) < 10:
 
 print(list1)
 
-list2 = [1,8, 2, 4]
+list2 = [1, 8, 2, 4]
 t1 = itertools.cycle(list2)
 print(next(t1))
 print(next(t1))
